@@ -1,0 +1,76 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+a.active hr {
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* 1. Global Focus Style for TV/Keyboard */
+/* 1. Global Focus Style for TV/Keyboard */
+:focus-visible {
+  outline: 4px solid #000000 !important; /* 🔥 Yahan RED color add kar diya */
+  outline-offset: 2px !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8) !important; /* 🔥 Shadow (glow) ko bhi RED kar diya */
+  transform: scale(1.05); 
+  transition: transform 0.2s ease-in-out;
+  z-index: 50;
+  position: relative;
+  border-radius: 8px; /* Thora pyara lagne ke liye golai add ki */
+}
+
+/* 2. Link aur Buttons ko focusable focus styles dena */
+a, button, input, select {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* =========================================================
+   🔥 SMART SCALING FOR BIG SCREENS (Monitors & Smart TVs) 🔥
+   ========================================================= */
+
+/* Default font-size 16px hota hai (Mobile, Tablet, Normal Laptops ke liye) */
+
+/* 1. Large Monitors (1920px - jaise 24" se 27" ki screen) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px; /* Poori website 12.5% bari ho jayegi */
+  }
+}
+
+/* 2. 2K Displays & Small TVs (2560px - jaise 32" LED TVs) */
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px; /* Poori website 50% bari ho jayegi */
+  }
+}
+
+/* 3. 4K Ultra HD TVs (3840px - jaise 50", 64", 75" LED TVs) */
+@media (min-width: 3840px) {
+  html {
+    font-size: 32px; /* Poori website double (200%) bari ho jayegi taake door se nazar aaye */
+  }
+}
+
+/* Optional: Agar koi bohot hi ultra-wide screen use kar raha ho (super stretch na ho) */
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
